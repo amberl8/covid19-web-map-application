@@ -4,11 +4,11 @@
 The Covid-19 pandemic that started in 2020 affected everyone around the world. This project will examine how Covid-19 affected the contiguous United States and which areas experience the worst amounts and rates of cases.
 
 ## Maps
-Map 1 is a choropleth map of Covid-19 rates by county from 2020. When a county is hovered over with the mouse, the county name and what the Covid-19 case rate is per 1000 residents will appear under the title.
+[Map 1](https://amberl8.github.io/covid19-web-map-application/map1.html) is a choropleth map of Covid-19 rates by county from 2020. When a county is hovered over with the mouse, the county name and what the Covid-19 case rate is per 1000 residents will appear under the title.
 
 ![Map 1](img/map1.JPG)
 
-Map 2 is a proportional symbol map that displays the count of Covid-19 cases by county from 2020. There is a dot in the center of each county and when clicked, a window will appear that states the number of cases in this area.
+[Map 2](https://amberl8.github.io/covid19-web-map-application/map2.html) is a proportional symbol map that displays the count of Covid-19 cases by county from 2020. There is a dot in the center of each county and when clicked, a window will appear that states the number of cases in this area.
 
 ![Map 2](img/map2.JPG)
 
