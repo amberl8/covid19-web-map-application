@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Covid-19 Deaths in the United States</title>
+    <title>Covid-19 Cases in the United States</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
@@ -53,7 +53,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 110px;
+            width: 138px;
             background: #fff;
             margin-right: 20px;
             margin-bottom: 40px;
@@ -111,7 +111,7 @@
 
 <body>
     <div id="map"></div>
-    <div id="title">Covid-19 Death Counts</div>
+    <div id="title">Covid-19 Case Counts</div>
     <div id="subtitle">2020</div>
     <div id="legend"></div>
     <script>
@@ -127,7 +127,7 @@
             center: [-95, 37] // starting center
         });
 
-        const grades = [10, 50, 100, 200, 500, 1000],
+        const grades = [1000, 2500, 5000, 10000, 50000, 80000],
             colors = ['rgb(237,248,251)', 'rgb(191,211,230)', 'rgb(158,188,218)', 'rgb(140,150,198)', 'rgb(136,86,167)',
                 'rgb(129,15,124)'
             ],
@@ -149,7 +149,7 @@
                 'paint': {
                     // increase the radii of the circle as mag value increases
                     'circle-radius': {
-                        'property': 'deaths',
+                        'property': 'cases',
                         'stops': [
                             [grades[0], radii[0]],
                             [grades[1], radii[1]],
@@ -180,7 +180,7 @@
             map.on('click', 'covid-point', (event) => {
                 new mapboxgl.Popup()
                     .setLngLat(event.features[0].geometry.coordinates)
-                    .setHTML(`<strong>Deaths: </strong> ${event.features[0].properties.deaths}`)
+                    .setHTML(`<strong>Cases: </strong> ${event.features[0].properties.cases}`)
                     .addTo(map);
             });
         });
@@ -189,11 +189,11 @@
         const legend = document.getElementById('legend');
 
         //set up legend grades and labels
-        var labels = ['<strong id="legend-title">Covid Death Count</strong>'],
+        var labels = ['<strong id="legend-title">Covid-19 Case Count</strong>'],
             vbreak;
 
         //iterate through grades and create a scaled circle and label for each
-        var classes = ['0-10', '11-50', '51-100', '101-200', '201-500', '>500']
+        var classes = ['0-1000', '1001-2500', '2501-5000', '5001-10000', '10001-50000', '>50000']
         for (var i = 0; i < grades.length; i++) {
             vbreak = classes[i];
             // you need to manually adjust the radius of each dot on the legend

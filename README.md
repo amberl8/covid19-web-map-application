@@ -1,1 +1,3 @@
-# web-map-application
+# Covid-19 Web Application
+
+## Introduction
